@@ -15,7 +15,7 @@
 
 为了实现上述目标，我们设计了包含四个核心组件的数据流水线。其整体架构如图 11-1 所示。
 
-![Mini-DeepSeek Data Pipeline](../../../images/part11/p11_mini_deepseek_arch_en.png)
+![Mini-DeepSeek Data Pipeline](../../images/part11/p11_mini_deepseek_arch_en.png)
 *图 11-1 Mini-DeepSeek 多源预训练数据流水线架构*
 
 流水线的四个核心组件包括：
@@ -288,4 +288,3 @@ Penedo G, Kydlicek H, de Wiele T V, Lozhkov A, Mitchell M, Raffel C, von Werra L
 Sennrich R, Haddow B, Birch A (2016) Neural Machine Translation of Rare Words with Subword Units (BPE). In: Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, pp 1715-1725.
 
 Zaharia M, Xin R S, Wendell P, Das T, Armbrust M, Dave A, Meng X, Rosen J, Venkataraman S, Franklin M J, Ghodsi A, Gonzalez J, Shenker S, Stoica I (2016) Apache Spark: A Unified Engine for Big Data Processing. Communications of the ACM 59(11):56-65.
-

@@ -15,7 +15,7 @@
 
 为了实现流水线作业，我们将工厂划分为五个核心组件。整体架构如图 13-1 所示。
 
-![Multimodal Instruction Factory](../../../images/part11/p13_mm_instruction_factory_arch_en.png)
+![Multimodal Instruction Factory](../../images/part11/p13_mm_instruction_factory_arch_en.png)
 *图 13-1 Qwen-VL 风格多模态指令合成流水线架构*
 
 1. **种子选择器 (Seed Selector)**：从百亿级海量图像库中，针对性地捞取 OCR 丰富、图表、真实复杂场景三类种子图像。
@@ -257,4 +257,3 @@ Wang P, Bai S, Tan S, Wang S, Fan Z, Bai J, Chen K, Liu X, Wang J, Ge W, others 
 Wang X, Wei J, Schuurmans D, Le Q, Chi E, Narang S, Chowdhery A, Zhou D (2023) Self-Consistency Improves Chain of Thought Reasoning in Language Models. In: International Conference on Learning Representations.
 
 Zheng L, Chiang W L, Sheng Y, Zhuang S, Wu Z, Zhuang Y, Lin Z, Li Z, Li D, Xing E P, Zhang H, Gonzalez J E, Stoica I (2023) Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems 36.
-

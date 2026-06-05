@@ -18,8 +18,8 @@
 10. [第十篇：智能化数据工程与 Data Engineering Agent](../part10/index.md)
 11. [第十一篇：隐私合规与数据安全](../part11/index.md)
 12. [第十二篇：专项数据集与数据工程实践](../part12/index.md)
-13. [第十三篇：项目实战](../part13/index.md)
-14. [第十四篇：开源大模型数据工程实战](../part14/index.md)
+13. [第十三篇：开源大模型数据工程配方与范式](../part13/index.md)
+14. [第十四篇：项目实战](../part14/index.md)
 
 ## 本篇目录
 

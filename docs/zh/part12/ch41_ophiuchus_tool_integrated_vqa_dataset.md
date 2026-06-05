@@ -8,7 +8,7 @@
 
 本章用于把 Ophiuchus Tool-Integrated Medical VQA Dataset 整理为“医学图像 Agent 工具调用数据”的章节。它不是普通医学 VQA 数据集，而是面向会主动调用视觉工具的医疗图像智能体，记录问题、局部视觉证据、工具轨迹、观察结果和回答监督。
 
-本章承接第三篇多模态数据工程、第六篇 Tool-Use 与 Agent 数据、第十篇 Data Engineering Agent 的工具边界和安全协同、第十一篇隐私合规与医学数据风险。向后支撑第十三篇 Agent Tool-Use 项目和第十四篇 VLM/多模态指令数据工厂。
+本章承接第三篇多模态数据工程、第六篇 Tool-Use 与 Agent 数据、第十篇 Data Engineering Agent 的工具边界和安全协同、第十一篇隐私合规与医学数据风险。向后支撑第十三篇 VLM/多模态指令数据配方和第十四篇 Agent Tool-Use、多模态指令工厂项目。
 
 ## 写作目标
 
