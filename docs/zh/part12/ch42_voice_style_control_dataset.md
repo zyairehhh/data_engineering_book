@@ -375,7 +375,7 @@ VoiceStyleControl 继承了音视频数据工程的底层能力。第10章讨论
 
 隐私合规章节为 VoiceStyleControl 提供边界。第36章的数据合规框架要求把授权、用途、留存和审计前置到数据生命周期；第37章的隐私保护技术则提醒我们，声音身份可以通过访问控制、联邦训练、加密存储和最小化采集降低风险。可控语音数据越强调声音条件和参考音色，越不能把合规视为附录。
 
-在多模态生成数据工程中，VoiceStyleControl 与第48章共享同一个核心模式：把生成目标拆为内容条件与风格条件，再用结构化 schema 绑定训练监督。T2I/T2V 中的 prompt、style、motion、camera、safety tag，在语音中对应 `answer`、`gender`、`mood`、参考声音 ID、sample_rate 和 audio token。第十三篇的 P10 端到端数据飞轮也可以吸收这套设计：离线构建初版语音数据，训练可控生成模型，在线收集体验反馈，回流到质检和配平，再发布下一版数据与模型。
+在多模态生成数据工程中，VoiceStyleControl 与第48章共享同一个核心模式：把生成目标拆为内容条件与风格条件，再用结构化 schema 绑定训练监督。T2I/T2V 中的 prompt、style、motion、camera、safety tag，在语音中对应 `answer`、`gender`、`mood`、参考声音 ID、sample_rate 和 audio token。第十四篇项目十“端到端 LLM 数据飞轮”也可以吸收这套设计：离线构建初版语音数据，训练可控生成模型，在线收集体验反馈，回流到质检和配平，再发布下一版数据与模型。
 
 ## 42.9 小结
 
