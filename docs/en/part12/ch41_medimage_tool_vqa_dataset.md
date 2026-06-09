@@ -4,6 +4,8 @@
 
 This chapter uses MedImage-ToolVQA as a focused dataset case for medical image tool-use data engineering. It examines task definition, sample structure, construction workflow, quality control, evaluation protocol, and safety boundaries. The chapter emphasizes how the dataset validates earlier data-engineering principles and clarifies its reproducibility conditions, model-training role, benchmark value, and deployment limits.
 
+The companion implementation repository is **MedImage-ToolVQA-Mindspore**: <https://github.com/blackkiring/MedImage-ToolVQA-Mindspore>. It is the implementation entry point for the MindSpore version of data construction, MindRecord packaging, SFT fine-tuning, inference serving, evaluation, and documentation. The engineering examples below therefore use the MindSpore stack as the default implementation frame.
+
 ## Keywords
 
 MedImage-ToolVQA; specialized dataset; evaluation benchmark; annotation workflow; quality control
@@ -16,7 +18,7 @@ MedImage-ToolVQA is a data engineering case built around this idea. It does not 
 
 This chapter explains the difference between medical image VQA and ordinary VQA, why tool trajectories are useful supervision, how MedImage-ToolVQA structures samples, how the construction pipeline and tool system work, and how to handle quality control, privacy, compliance, and medical safety boundaries. The chapter discusses data engineering and model-training supervision only. It does not provide clinical diagnostic advice.
 
-![Figure 41-1: Local evidence loop for a medical image agent](../../images/part12/ch41_01_medimage_tool_vqa_evidence_loop_en.png)
+![Figure 41-1: Local evidence loop for a medical image agent](../../images/part12/ch41_01_medimage_tool_vqa_evidence_loop_en.svg)
 
 *Figure 41-1: The key is to record where to look again, how to look, and how judgment changes after observation.*
 
@@ -97,59 +99,118 @@ Observation images are both training inputs and audit objects. Without maintaini
 
 ## 41.5 Conceptual Construction Flow
 
-MedImage-ToolVQA construction has six stages: region sample organization, question generation, quality verification, tool observation generation, trajectory synthesis, and training packaging.
+MedImage-ToolVQA construction has six stages: region sample organization, question generation, quality verification, tool observation generation, trajectory synthesis, and training packaging. The following example rewrites the former pseudocode as MindSpore-oriented implementation entries. It uses MindRecord for durable sample storage, `mindspore.dataset` for training input, and `vllm-mindspore` for LLM serving during question and trajectory generation. The official `vllm-mindspore` codebase is hosted on AtomGit at <https://atomgit.com/mindspore/vllm-mindspore>. The example leaves project-specific de-identification rules and error handling to the repository implementation, but keeps the data contracts and quality gates explicit.
 
-```text
-Input: raw medical images, region candidates, bbox, mask, target descriptions, tool configuration
-Output: multi-turn tool-use samples for SFT or RL
+### 41.5.1 Region Merging: Write Evidence into MindRecord
 
-merge:
-    read region-level results from multiple sources
-    align records by image ID and region ID
-    merge bbox, mask, target description, and source information
-    remove duplicate, empty, and untraceable regions
-    produce region_pool
+`merge` converts region evidence from different parsing tools or intermediate results into a MindSpore-readable data asset. The example keeps only the core contract: deduplicate by `image_id` and `region_id`, preserve bbox, mask, target description, and source fields, and write the result into MindRecord.
 
-make_vqa:
-    for each valid region in region_pool:
-        generate a question from original image, region evidence, and target description
-        construct candidate answers with one correct option
-        hide bbox, mask, coordinate, and annotation traces
-        keep the relation between question and region evidence
-    produce vqa_candidates
+```python
+from mindspore.mindrecord import FileWriter
 
-verify:
-    for each sample in vqa_candidates:
-        check prompt, options, answer, and image references
-        judge whether the question depends on the image and target region
-        check consistency among bbox, mask, target description, and answer
-        mark passed, needs_revision, downgraded, or discarded
-    produce verified_samples
+schema = {
+    "image_id": {"type": "string"},
+    "region_id": {"type": "string"},
+    "bbox": {"type": "int32", "shape": [-1]},
+    "mask_path": {"type": "string"},
+    "target_desc": {"type": "string"},
+    "source": {"type": "string"},
+}
 
-makereasoning:
-    for each passed sample:
-        if local evidence is needed:
-            choose allowed visual tool
-            write tool name and arguments
-            generate observation image reference
-            record reasoning update after observation
-        else:
-            keep direct visual reasoning path
-    produce tool_trajectories
-
-make_sft:
-    for each trajectory:
-        write original question as first user message
-        write tool call as assistant message
-        write tool observation as later user message
-        write final answer as assistant message
-        keep quality labels and version metadata
-    produce training records
+writer = FileWriter("region_pool.mindrecord", shard_num=4, overwrite=True)
+writer.add_schema(schema, "region evidence schema")
+writer.write_raw_data(deduplicate_regions(raw_regions, keys=["image_id", "region_id"]))
+writer.commit()
 ```
 
-![Figure 41-2: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.png)
+### 41.5.2 LLM Serving: Use vllm-mindspore
 
-The implementation can keep separate framework-specific entry points. [MedImage-ToolVQA-Mindspore](https://github.com/blackkiring/MedImage-ToolVQA-Mindspore) is the project implementation repository for MindSpore data processing, training packaging, inference, evaluation, and documentation.
+`make_vqa` and `makereasoning` call a locally deployed LLM. In the MindSpore stack, `vllm-mindspore` can expose an OpenAI-compatible service. Its official codebase is hosted on AtomGit at <https://atomgit.com/mindspore/vllm-mindspore>.
+
+```bash
+vllm-mindspore serve Qwen/Qwen3-vl-8B \
+  --host 0.0.0.0 \
+  --port 8000
+```
+
+```python
+from openai import OpenAI
+
+client = OpenAI(base_url="http://127.0.0.1:8000/v1", api_key="EMPTY")
+```
+
+### 41.5.3 Question Generation: Read Region Evidence from MindDataset
+
+`make_vqa` reads region evidence from `MindDataset` and generates the question, candidate options, and reference answer. The prompt hides bbox, mask paths, and region IDs to avoid leaking annotation mechanics into the question.
+
+```python
+import mindspore.dataset as ds
+
+dataset = ds.MindDataset("region_pool.mindrecord", shuffle=False)
+
+for row in dataset.create_dict_iterator(output_numpy=True):
+    prompt = build_vqa_prompt(row, hide_fields=["bbox", "mask_path", "region_id"])
+    reply = client.chat.completions.create(
+        model="Qwen/Qwen3-vl-8B",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.2,
+    )
+    write_jsonl("vqa_candidates.jsonl", parse_vqa(reply.choices[0].message.content, row))
+```
+
+### 41.5.4 Quality Verification: Produce Gate Results
+
+`verify` does not rewrite the answer directly. It attaches quality-gate results to each sample. Only samples with complete fields, clear image dependency, region consistency, and valid tool JSON move into trajectory synthesis.
+
+```python
+gates = {
+    "complete": has_required_fields(sample),
+    "image_dependent": requires_visual_evidence(sample),
+    "region_consistent": align_question_answer_roi(sample),
+    "tool_json_valid": validate_tool_schema(sample),
+}
+
+sample["review_status"] = "pass" if all(gates.values()) else "revise"
+sample["quality_gates"] = gates
+```
+
+### 41.5.5 Trajectory Synthesis: Return Tool Observations to Dialogue
+
+`makereasoning` is not about generating longer explanations. Its core task is to place tool calls and returned observation images into the next dialogue turn. If local evidence is unnecessary, the sample keeps a direct visual reasoning path.
+
+```python
+observation = run_visual_tool(sample) if needs_local_evidence(sample) else None
+prompt = build_reasoning_prompt(sample, observation)
+reply = client.chat.completions.create(
+    model="Qwen/Qwen3-vl-8B",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.1,
+)
+
+sample["trajectory"] = build_tool_trajectory(sample, observation, reply)
+```
+
+### 41.5.6 SFT Packaging: Store Training Records in MindRecord
+
+`make_sft` writes multi-turn messages, image references, answers, and quality labels into a training MindRecord. The SFT side then loads it through `mindspore.dataset.MindDataset` and batches it for fine-tuning.
+
+```python
+schema = {
+    "messages": {"type": "string"},
+    "images": {"type": "string"},
+    "answer": {"type": "string"},
+    "quality": {"type": "string"},
+}
+
+writer = FileWriter("tool_sft.mindrecord", shard_num=8, overwrite=True)
+writer.add_schema(schema, "tool-use SFT schema")
+writer.write_raw_data(pack_sft_records(tool_trajectories))
+writer.commit()
+
+train_ds = ds.MindDataset("tool_sft.mindrecord").shuffle(4096).batch(8)
+```
+
+![Figure 41-2: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg)
 
 Key principles:
 
@@ -177,7 +238,7 @@ MedImage-ToolVQA uses three visual tools: `Zoom-in`, `BiomedParse`, and `SAM2`.
 
 The core of a tool trajectory is multi-turn structure: action, observation, continued judgment.
 
-![Figure 41-3: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.png)
+![Figure 41-3: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.svg)
 
 A simplified trajectory has four steps. The user provides the original image, question, and options. The assistant decides local evidence is needed and outputs a structured tool call. The environment returns a new observation image. The assistant uses both original and observation images to answer.
 
@@ -236,7 +297,7 @@ In SFT, clarity and stability matter most. The model must learn that `<tool_call
 
 Medical image SFT records should also keep an imaging-task schema. Here “diagnosis” means structuring the training task, candidate labels, evidence region, and safety boundary; it does not ask the model to provide clinical conclusions.
 
-![Figure 41-5: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.png)
+![Figure 41-5: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.svg)
 
 *Figure 41-5: Bbox is a structured field and should be recoverable as reviewable visual evidence.*
 
@@ -353,7 +414,7 @@ Tool-use data quality is not determined by answer correctness alone. A sample sh
 
 Quality control should be layered across question generation, region validation, observation generation, trajectory synthesis, and training packaging.
 
-![Figure 41-4: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.png)
+![Figure 41-4: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.svg)
 
 The first layer is **structure validation**: prompt, options, answer, image references, region fields, and tool parameters must be complete and parseable. Tool names must come from a whitelist; bbox coordinates must be in bounds.
 
@@ -452,7 +513,7 @@ Schick, T., Dwivedi-Yu, J., Dessi, R., et al. (2023). Toolformer: Language Model
 
 Kirillov, A., Mintun, E., Ravi, N., et al. (2023). Segment Anything. Proceedings of the IEEE/CVF International Conference on Computer Vision, 4015-4026.
 
-Ravi, N., Gabeur, V., Hu, Y.-T., et al. (2024). SAM 2: Segment Anything in Images and Videos. arXiv:2408.00714.
+Ravi, N., Gabeur, V., Hu, Y.-T., Hu, R., Ryali, C., Ma, T., et al. (2025). SAM 2: Segment Anything in Images and Videos. International Conference on Learning Representations.
 
 Ma, J., He, Y., Li, F., et al. (2024). Segment anything in medical images. Nature Communications, 15, 654. https://doi.org/10.1038/s41467-024-44824-z
 
