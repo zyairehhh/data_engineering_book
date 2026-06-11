@@ -672,24 +672,26 @@ def compile_pdf(tex_path: Path, pdf_path: Path, timeout: int) -> None:
     tectonic = shutil.which("tectonic")
     xelatex = shutil.which("xelatex")
     if tectonic:
-        cmd = [tectonic, "--keep-logs", "-o", str(pdf_path.parent), str(tex_path)]
+        tex_dir = tex_path.parent
+        cmd = [tectonic, "--keep-logs", "-o", ".", tex_path.name]
         print("[run] " + " ".join(cmd))
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=tex_dir)
         emit_process_output(proc.stdout, stream=sys.stdout)
         emit_process_output(proc.stderr, stream=sys.stderr)
         if proc.returncode != 0:
             raise RuntimeError(f"Tectonic failed with rc={proc.returncode}")
     elif xelatex:
+        tex_dir = tex_path.parent
         cmd = [
             xelatex,
             "-interaction=nonstopmode",
             "-halt-on-error",
-            f"-output-directory={pdf_path.parent}",
-            str(tex_path),
+            "-output-directory=.",
+            tex_path.name,
         ]
         for _ in range(2):
             print("[run] " + " ".join(cmd))
-            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=tex_dir)
             emit_process_output(proc.stdout, stream=sys.stdout)
             emit_process_output(proc.stderr, stream=sys.stderr)
             if proc.returncode != 0:

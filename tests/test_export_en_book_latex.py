@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+from unittest import mock
 import sys
 import tempfile
 import unittest
@@ -56,6 +57,25 @@ class ExportEnglishBookLatexTest(unittest.TestCase):
         self.assertIn(r"\frontmatter", tex)
         self.assertIn(r"\mainmatter", tex)
         self.assertEqual(stats.files, 1)
+
+    def test_xelatex_compile_runs_from_tex_directory_for_relative_assets(self):
+        exporter = load_exporter()
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tex_dir = Path(tmpdir)
+            tex_path = tex_dir / "sample.tex"
+            pdf_path = tex_dir / "sample.pdf"
+            tex_path.write_text(r"\documentclass{book}\begin{document}x\end{document}", encoding="utf-8")
+
+            def fake_run(*args, **kwargs):
+                pdf_path.write_bytes(b"%PDF-" + b"x" * 100_000)
+                return mock.Mock(returncode=0, stdout="", stderr="")
+
+            with mock.patch.object(exporter.shutil, "which", side_effect=lambda name: "/bin/xelatex" if name == "xelatex" else None):
+                with mock.patch.object(exporter.subprocess, "run", side_effect=fake_run) as run:
+                    exporter.compile_pdf(tex_path, pdf_path, timeout=30)
+
+            self.assertEqual(run.call_args.kwargs["cwd"], tex_dir)
 
 
 if __name__ == "__main__":
