@@ -1,12 +1,12 @@
 # 全书引用完整性与真实性审计报告
 
-- 生成时间：2026-06-13T15:57:56.573071+00:00
+- 生成时间：2026-06-13T16:31:54.237903+00:00
 - 范围：当前 Springer 中文交付稿 `docs/zh` 中的正文章、项目章和附录。
 - 扫描文件：71
 - 参考文献条目：972
-- 正文 author-year 引用：1330
+- 正文 author-year 引用：1331
 - 正文引用未在同章参考文献解析到：0
-- 章末参考文献未被同章正文引用：225
+- 章末参考文献未被同章正文引用：224
 - 同章疑似重复参考文献组：0
 
 ## 外部核验概览
@@ -152,7 +152,7 @@
 | `docs/zh/part13/ch45_posttrain_recipes.md` | 409 | 18 | `lightman:2024` | Let's Verify Step by Step | Lightman H, Kosaraju V, Burda Y, Edwards H, Baker B, Lee T, Leike J, Schulman J, Sutskever I, Cobbe K (2024) Let's Verify Step by Step. International Conference on Learning Representations. |
 | `docs/zh/part13/ch46_rl_reasoning_data.md` | 575 | 4 | `touvron:2023` | Llama 2: Open Foundation and Fine-Tuned Chat Models | Touvron H, Martin L, Stone K, Albert P, Almahairi A, Babaei Y, Bashlykov N, Batra S, Bhargava P, Bhosale S, others (2023) Llama 2: Open Foundation and Fine-Tuned Chat Models. arXiv preprint arXiv:2307.09288. |
 
-> 其余 105 条见 JSON 明细。
+> 其余 104 条见 JSON 明细。
 
 ## 外部核验问题条目
 

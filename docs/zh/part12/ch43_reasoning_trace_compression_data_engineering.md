@@ -28,7 +28,7 @@
 
 Latent-Switch-69K 正是在这个问题背景下出现的。它不是一个简单的“更短 CoT 数据集”，也不是把 Long-CoT 样本做摘要后直接用于 SFT。它服务的是 [LaTER](https://github.com/TioeAre/LaTER) 这类 latent-then-explicit reasoning 系统：模型先经过一段有边界的 latent reasoning 区间，在连续隐状态中完成高层规划和压缩思考，然后切换回可见文本，用较短的显式 CoT 做符号验证，最后生成答案。数据工程目标因此发生了变化：样本不仅要回答“答案是什么”，也要回答“哪些内容适合成为隐藏规划预算，哪些内容仍需要作为可见验证监督”。
 
-![图43-1：Latent-Switch-69K 构建流水线图](../../images/part12/ch40_04_latent_switch_pipeline.svg)
+![图43-1：Latent-Switch-69K 构建流水线图](../../images/part12/ch43_latent_switch_pipeline.svg)
 
 *图43-1：Latent-Switch-69K 将 Dolci-Think-SFT-32B 的推理轨迹蒸馏为 solution intuition、压缩 CoT、latent budget、student sequence 和 mask 对齐后的 SFT 记录。*
 
@@ -178,7 +178,7 @@ record = asyncio.run(
 )
 ```
 
-![图43-3：原始 CoT、压缩 CoT 与 latent placeholder 对比](../../images/part12/ch40_06_cot_latent_comparison.svg)
+![图43-3：原始 CoT、压缩 CoT 与 latent placeholder 对比](../../images/part12/ch43_cot_latent_comparison.svg)
 
 *图43-3：source trace 中的大量可见推理被拆成两类信号：solution intuition 用于估计 latent budget，压缩 CoT 用于显式验证和答案监督。*
 
@@ -333,7 +333,7 @@ $$
 
 其中 $\mathcal{S}_{prompt}$ 表示用户 prompt 与 assistant prefix 之前的上下文位置，$\mathcal{S}_{lat}^{int}$ 表示 `<latent_think>` 和 `</latent_think>` 之间的内部 placeholder 位置。被置为 `-100` 的 token 不被普通 CE 直接拟合。这样做避免了一个错误目标：要求模型在 latent 内部位置预测某个固定文本 token。对 LaTER 来说，latent 内部位置的价值不是输出 `<|endoftext|>`，而是让模型执行若干步隐藏状态更新。
 
-![图43-5：Supervision mask 示意图](../../images/part12/ch40_08_supervision_mask.svg)
+![图43-5：Supervision mask 示意图](../../images/part12/ch43_supervision_mask.svg)
 
 *图43-5：prompt 与 latent interior 被普通 CE mask 掉；latent 边界、显式 CoT、答案和结束 token 由不同权重和 mask 控制。*
 

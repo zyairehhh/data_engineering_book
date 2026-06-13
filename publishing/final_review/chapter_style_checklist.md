@@ -68,10 +68,10 @@
 | `docs/zh/part7/ch21_rag_pipeline.md` | 第21章：RAG 数据流水线 | 35 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part7/ch22_multimodal_rag_visual_retrieval.md` | 第22章：多模态 RAG 与视觉检索 | 35 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part7/ch23_online_feedback_knowledge_update.md` | 第23章：在线反馈闭环与知识更新 | 44 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
-| `docs/zh/part8/ch24_dataops_flywheel_team.md` | 第24章：DataOps 飞轮与团队组织 | 35 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
+| `docs/zh/part8/ch24_dataops_flywheel_team.md` | 第24章：DataOps 飞轮与团队组织 | 36 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part8/ch25_data_versioning_experiment_tracking.md` | 第25章：数据版本管理与实验追踪 | 21 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part8/ch26_data_platform_observability.md` | 第26章：数据平台可观测性 | 8 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part9/ch27_data_catalog_and_metadata_governance.md` | 第27章：数据资产目录与元数据治理 | 11 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part9/ch28_data_productization_and_data_contracts.md` | 第28章：数据产品化与数据契约 | 6 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
-| `docs/zh/part9/ch29_data_valuation_and_reuse.md` | 第29章：数据资产价值评估与复用机制 | 28 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
+| `docs/zh/part9/ch29_data_valuation_and_reuse.md` | 第29章：数据资产价值评估与复用机制 | 29 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |
 | `docs/zh/part9/ch30_internal_data_market_and_sharing_governance.md` | 第30章：企业内部数据市场与共享治理 | 33 | 语言风格；术语统一；章节逻辑；图表引用；参考文献；Springer 体例 | 待人工签核 |

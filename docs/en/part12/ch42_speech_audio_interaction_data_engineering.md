@@ -44,7 +44,7 @@ VoiceStyleControl is composed of two task types: speech-to-speech dialogue gener
 
 VoiceStyleControl contains 154,906 samples in total. Of these, S2SEmoControl contains 20,117 samples (approximately 13.0% of the total), targeting style-controllable speech-to-speech dialogue generation; TTSSpeakerControl contains 134,789 samples (approximately 87.0% of the total), targeting controllable text-to-speech generation. The former is closer to a real voice assistant scenario, where the model must understand the user's spoken request and generate a spoken assistant response; the latter focuses more directly on training the model to generate target speech from a style text, acoustic condition, and emotional style.
 
-**Table 40-1: VoiceStyleControl Sample Scale and Emotion Distribution**
+**Table 42-1: VoiceStyleControl Sample Scale and Emotion Distribution**
 
 | Emotion | S2SEmoControl | TTSSpeakerControl | Total | Total ratio |
 |---|---:|---:|---:|---:|
@@ -55,7 +55,7 @@ VoiceStyleControl contains 154,906 samples in total. Of these, S2SEmoControl con
 | sad | 4,128 | 33,310 | 37,438 | 24.2% |
 | **Total** | **20,117** | **134,789** | **154,906** | **100.0%** |
 
-Table 40-1 shows that the five emotion classes in S2SEmoControl are nearly balanced, each ranging from approximately 3.8k to 4.1k samples; TTSSpeakerControl covers four expressive emotions — happy, angry, fearful, and sad — and does not explicitly include neutral. This design is not accidental. S2S dialogue needs neutral as a stable baseline; without it, the model tends to learn all responses as high-intensity emotional expressions. The TTS controllable generation subset, which has more samples, concentrates its capacity on expressions such as "say it happily," "say it angrily," "say it a bit fearfully," and "say it sadly" — cases that require greater acoustic variation.
+Table 42-1 shows that the five emotion classes in S2SEmoControl are nearly balanced, each ranging from approximately 3.8k to 4.1k samples; TTSSpeakerControl covers four expressive emotions — happy, angry, fearful, and sad — and does not explicitly include neutral. This design is not accidental. S2S dialogue needs neutral as a stable baseline; without it, the model tends to learn all responses as high-intensity emotional expressions. The TTS controllable generation subset, which has more samples, concentrates its capacity on expressions such as "say it happily," "say it angrily," "say it a bit fearfully," and "say it sadly" — cases that require greater acoustic variation.
 
 In terms of record composition, neither subset is a simple combination of "text + audio." Each sample contains at least five categories of information: task source and task type, text-side content, acoustic and emotion conditions, speech generation supervision, and basic audio configuration. Together, these determine whether a voice sample can be used to train conditioned, emotionally expressive speech generation: task information determines the loading procedure, text content provides the semantic target, acoustic and emotion conditions specify the generation style, speech supervision provides learnable acoustic targets, and basic audio configuration ensures that training and evaluation can be reproduced.
 
@@ -65,7 +65,7 @@ VoiceStyleControl should therefore not be understood simply as a TTS dataset. Th
 
 ### VoiceStyleControl.3: Sample Schema: Separate Modeling of the Semantic Channel and Style Channel
 
-![Figure 42-1: Dual-channel schema for semantic response and style control](../../images/part12/ch40_01_dual_channel_schema.svg)
+![Figure 42-1: Dual-channel schema for semantic response and style control](../../images/part12/ch42_fig02_dual_channel_schema.svg)
 
 *Figure 42-1: Dual-channel schema for semantic response and style control. The semantic channel answers "what to say," the style channel answers "with which voice and emotion to say it," and the acoustic supervision channel binds both to audio files, speech tokens, and sampling configuration.*
 
@@ -126,20 +126,20 @@ TTSSpeakerControl concentrates the control capability in a text-to-speech form. 
 
 Combining samples from both S2S and TTS, the fields in VoiceStyleControl can be organized into six layers: task identifier, text content, acoustic conditions, emotion conditions, speech supervision, and basic audio configuration. S2S samples contain both user-side and assistant-side fields and therefore distinguish query-side from answer-side; TTS samples generate only assistant-side speech and therefore have a more concentrated set of fields. `language` fixes the language, and `sample_rate` fixes the audio sampling configuration; these foundational fields are the underlying contract for training loading and evaluation reproducibility and must not be inferred implicitly from path names or directory conventions alone.
 
-**Table 40-2: Field Descriptions for Speaker, Emotion, and Sampling Labels**
+**Table 42-2: Field Descriptions for Speaker, Emotion, and Sampling Labels**
 
 | Label layer | Field | Values / examples | Distribution or engineering requirements |
 |---|---|---|---|
 | Query-side speaker | `query_gender` | `female` / `male`, e.g., `female` | Calculated separately for the query side. |
 | Answer-side acoustic condition | `answer_gender` | `male` / `female` | Before training, monitor balance by answer-side gender, mood, and reference acoustic condition to avoid output voice bias. |
 | Query-side emotion | `query_mood` | `happy`, `angry`, `fearful`, `neutral`, `sad` | Five classes are nearly balanced in S2SEmoControl. |
-| Answer-side emotion | `answer_mood` | Same as above | Total counts as per Table 40-1; TTSSpeakerControl does not explicitly include `neutral`. |
+| Answer-side emotion | `answer_mood` | Same as above | Total counts as per Table 42-1; TTSSpeakerControl does not explicitly include `neutral`. |
 | Language and sampling | `language` / `sample_rate` | `en` / `16000` | Used as loading, resampling, and evaluation-reproducibility fields; not inferred implicitly from paths. |
 | Reference voice citation | `query_id` / `answer_id` | e.g., `female-neutral-1` | Points to a style instance in the authorized reference voice pool; does not expose real identity. |
 
 In VoiceStyleControl, emotion distribution is only the first layer of balancing information. When samples actually enter training and evaluation, they are further decomposed along the input-side and output-side axes: `query_gender × query_mood` describes the state distribution of user speech, `answer_gender × answer_mood` describes the target distribution of assistant-generated speech, and the reference voice ID constrains how the same acoustic condition is reused across different texts and emotions. Language and sampling rate appear foundational but determine whether loading, resampling, and audio metrics are comparable. Only by examining all these axes together can one determine whether a particular emotion is concentrated under a specific acoustic condition, whether a particular reference timbre appears too frequently in both training and test sets, and whether a model failure originates from the semantic, acoustic, or emotion control dimension.
 
-At the data-synthesis stage, this field difference manifests as two ways of organizing conditions: S2SEmoControl must handle reference-voice selection and emotion injection on both the query and answer sides, while TTSSpeakerControl separates the style description from the content to be spoken before synthesizing answer-side speech. The concrete synthesis logic is covered in Section 40.4, steps four and five; this section first fixes the field contract.
+At the data-synthesis stage, this field difference manifests as two ways of organizing conditions: S2SEmoControl must handle reference-voice selection and emotion injection on both the query and answer sides, while TTSSpeakerControl separates the style description from the content to be spoken before synthesizing answer-side speech. The concrete synthesis logic is covered in Section 42.4, steps four and five; this section first fixes the field contract.
 
 A unified JSON Schema constrains required fields by task type; a production-grade manifest should further add enum constraints, path-existence validation, file hashes, authorization IDs, tokenizer name, tokenizer version, and token frame rate declarations.
 
@@ -266,7 +266,7 @@ Once training samples enter the dataloader, they are projected from the standard
 
 ### VoiceStyleControl.4: Construction Pipeline: From Text Conversation to Controllable Voice Records
 
-![Figure 42-2: VoiceStyleControl data construction pipeline](../../images/part12/ch40_02_voice_style_data_pipeline.svg)
+![Figure 42-2: VoiceStyleControl data construction pipeline](../../images/part12/ch42_fig01_data_pipeline.svg)
 
 *Figure 42-2: VoiceStyleControl data construction pipeline. Text conversation or style content is first assigned speaker and emotion conditions, then audio is generated or collected through the authorized reference voice pool, and finally the samples are tokenized, quality-checked, balanced, and packaged.*
 
@@ -360,7 +360,7 @@ The packaging artifacts include not only JSONL, Parquet, or Hugging Face Dataset
 
 ### VoiceStyleControl.5: Quality Assessment and Closed-Loop Remediation
 
-![Figure 42-3: Quality assessment and data flywheel closed loop](../../images/part12/ch40_03_quality_loop.svg)
+![Figure 42-3: Quality assessment and data flywheel closed loop](../../images/part12/ch42_fig03_quality_loop.svg)
 
 *Figure 42-3: Quality assessment and data flywheel closed loop. Automated validation, reverse ASR, style assessment, and manual sampling together form a defective-sample queue that feeds back into re-synthesis, re-annotation, downweighting, or removal.*
 
@@ -368,7 +368,7 @@ Quality assessment for controllable voice interaction data must simultaneously c
 
 Quality gates should be divided into "hard failures" and "soft risks." Missing paths, incorrect sampling rates, corrupted audio, unreadable tokens, and severe ASR reverse-transcription inconsistency typically constitute hard failures and should be blocked immediately. Slightly weak emotion intensity, average naturalness, or borderline acoustic condition perception can enter a soft-risk queue, where the decision to re-synthesize, downweight, or manually review is made based on task criticality. Treating every issue as a disqualifying veto wastes remediable samples; allowing every issue to pass dilutes the control signal with noise.
 
-**Table 40-3: Quality Assessment Metrics**
+**Table 42-3: Quality Assessment Metrics**
 
 | Assessment dimension | Core question | Automated metrics | Key points for human review | Handling of failures |
 |---|---|---|---|---|
@@ -407,7 +407,7 @@ Evaluation results should also be written back to the data version, not stored o
 
 Voice identity is a highly sensitive data asset. A person's voice contains cues about age, gender, regional background, emotional state, health condition, and personal identity; in speaker verification systems, voice can even function as an authentication credential. Once controllable voice data incorporates voice cloning, authorization, revocation, usage restriction, and auditing must be embedded in the data lifecycle — not appended as disclaimer footnotes at model release time.
 
-**Table 40-4: Privacy and Misuse Risk Control Checklist**
+**Table 42-4: Privacy and Misuse Risk Control Checklist**
 
 | Risk type | Triggering scenario | Control measures | Audit evidence |
 |---|---|---|---|
@@ -418,7 +418,7 @@ Voice identity is a highly sensitive data asset. A person's voice contains cues 
 | Bias and stereotyping | `gender` persistently correlated with `mood` or content type | Distribution monitoring, counterfactual samples, ban on gender-stereotyping templates | Distribution reports, bias evaluation results |
 | Version loss of control | Samples re-synthesized or re-annotated without traceability | Data version management, hashing, training set freezing | Experiment tracking IDs |
 
-Table 40-4 implements risk governance as data gates. References with missing authorization must not enter the synthesis queue; references with revoked authorization must be traceable to all derived audio and tokens; high-risk emotional manipulation samples must not rely solely on post-training safety strategies — they must be blocked or downweighted during data construction. For voice generation, compliance is not the final filter before launch but an integral part of the sample lifecycle.
+Table 42-4 implements risk governance as data gates. References with missing authorization must not enter the synthesis queue; references with revoked authorization must be traceable to all derived audio and tokens; high-risk emotional manipulation samples must not rely solely on post-training safety strategies — they must be blocked or downweighted during data construction. For voice generation, compliance is not the final filter before launch but an integral part of the sample lifecycle.
 
 The reference voice pool is the governance focal point. Every reference should have a `consent_id`, authorization scope, collection method, permitted tasks, expiration time, and revocation status. If authorization covers research use only, samples must not enter commercial model training; if a speaker revokes authorization, the manifest must be able to identify all affected `query_id/answer_id` values, audio files, token files, and training versions. When releasing externally, reference IDs that cannot be reverse-mapped to real identities should be used wherever possible; voice IDs, file names, or paths should not be designed as real names.
 

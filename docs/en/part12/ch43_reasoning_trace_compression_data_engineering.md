@@ -28,7 +28,7 @@ First, long CoT carries a high token cost. Derivations in mathematics, code, and
 
 Latent-Switch-69K emerged against this backdrop. It is neither a simple "shorter CoT dataset" nor a collection of Long-CoT samples summarized and directly used for SFT. It serves [LaTER](https://github.com/TioeAre/LaTER)-style latent-then-explicit reasoning systems: the model first passes through a bounded latent reasoning interval, completing high-level planning and compressed thinking in continuous hidden states, then switches back to visible text and uses a shorter explicit CoT for symbolic verification, before generating the final answer. The data engineering objective therefore shifts: samples must answer not only "what is the answer" but also "which content is appropriate for the hidden planning budget and which content still needs to serve as visible verification supervision."
 
-![Figure 43-1: Latent-Switch-69K Construction Pipeline](../../images/part12/ch40_04_latent_switch_pipeline.svg)
+![Figure 43-1: Latent-Switch-69K Construction Pipeline](../../images/part12/ch43_latent_switch_pipeline.svg)
 
 *Figure 43-1: Latent-Switch-69K distills reasoning traces from Dolci-Think-SFT-32B into solution intuitions, compressed CoT, latent budgets, student sequences, and mask-aligned SFT records.*
 
@@ -178,7 +178,7 @@ record = asyncio.run(
 )
 ```
 
-![Figure 43-3: Comparison of Original CoT, Compressed CoT, and Latent Placeholders](../../images/part12/ch40_06_cot_latent_comparison.svg)
+![Figure 43-3: Comparison of Original CoT, Compressed CoT, and Latent Placeholders](../../images/part12/ch43_cot_latent_comparison.svg)
 
 *Figure 43-3: The extensive visible reasoning in the source trace is split into two types of signal: solution intuition is used to estimate the latent budget, and the compressed CoT is used for explicit verification and answer supervision.*
 
@@ -338,7 +338,7 @@ x_i, & \text{otherwise}.
 
 Here \(\mathcal{S}_{\mathrm{prompt}}\) denotes positions in the user prompt and the context preceding the assistant prefix, and \(\mathcal{S}_{\mathrm{latent\_inner}}\) denotes the interior placeholder positions between `<latent_think>` and `</latent_think>`. Tokens set to `-100` are not directly fitted by ordinary CE. This avoids an erroneous objective: requiring the model to predict a specific fixed text token at latent interior positions. For LaTER, the value of latent interior positions lies not in outputting `<|endoftext|>` tokens but in allowing the model to execute a number of hidden state updates.
 
-![Figure 43-5: Supervision Mask Schematic](../../images/part12/ch40_08_supervision_mask.svg)
+![Figure 43-5: Supervision Mask Schematic](../../images/part12/ch43_supervision_mask.svg)
 
 *Figure 43-5: Prompt and latent interior tokens are masked from ordinary CE; latent boundaries, explicit CoT, answers, and end tokens are controlled by different weights and masks.*
 

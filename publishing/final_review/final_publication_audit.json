@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-13T15:57:56.456714+00:00",
+  "generated_at_utc": "2026-06-13T16:31:29.859000+00:00",
   "scanned_files": 71,
   "style_hits": [
     {
@@ -8712,6 +8712,13 @@
     },
     {
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
+      "line": 303,
+      "kind": "rhetorical-not-but",
+      "phrase": "不是要求所有活动都在一周内完整闭环，而是",
+      "context": "飞轮的运转逻辑是：需求池产生任务 → 任务驱动数据生产，更新数据池 → 算法从数据池取数做实验，结果进入实验池 → 实验结果中发现的问题进入问题池 → 问题被修复后，更新的数据重新进入数据池，同时对需求池里的优先级做调整。其中，需求对..."
+    },
+    {
+      "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
       "line": 305,
       "kind": "weak-booster",
       "phrase": "真正",
@@ -8798,8 +8805,8 @@
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
       "line": 633,
       "kind": "rhetorical-not-but",
-      "phrase": "不是\"上工具\"，而是",
-      "context": "第二阶段的核心并不是\"上工具\"，而是让工具承载已经明确的流程。团队最初尝试直接上线标注平台，但很快发现，如果没有统一字段、统一任务命名和统一验收规则，平台只是把混乱从线下搬到了线上。因此，团队先统一了数据格式和任务模板，再把任务分发、..."
+      "phrase": "不是使用工具，而是",
+      "context": "第二阶段的核心并不是使用工具，而是让工具承载已经明确的流程。团队最初尝试直接上线标注平台，但很快发现，如果没有统一字段、统一任务命名和统一验收规则，平台只是把混乱从线下搬到了线上。因此，团队先统一了数据格式和任务模板，再把任务分发、标..."
     },
     {
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
@@ -8890,7 +8897,7 @@
       "line": 59,
       "kind": "rhetorical-not-but",
       "phrase": "不是不记录，而是",
-      "context": "大多数数据团队的版本管理起点是\"文件夹管理\"：用日期命名文件夹，新数据放新文件夹，遇到问题就去翻历史文件夹。这种方式的问题不是不记录，而是记录的信息不够。日期告诉你\"什么时候\"，但无法告诉你："
+      "context": "大多数数据团队的版本管理起点是\"文件夹管理\"：用日期命名文件夹，新数据放新文件夹，遇到问题就去历史文件夹中逐条确认。这种方式的问题不是不记录，而是记录的信息不够。日期告诉你\"什么时候\"，但无法告诉你："
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
@@ -8971,49 +8978,49 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 490,
+      "line": 491,
       "kind": "weak-booster",
       "phrase": "真正",
       "context": "治理规则的执行方式也应分层。低风险操作可以通过系统提示和自动记录完成；中风险操作需要轻量审批；高风险操作需要正式审批和审计；禁止操作应由系统直接阻断。仅靠制度文字无法保证执行，因为人在高压项目中容易绕过流程。把规则嵌入工具，例如冻结版..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 506,
+      "line": 507,
       "kind": "rhetorical-not-but",
       "phrase": "不是因为规则数量多，而是",
       "context": "最后，治理规则应保持可解释性。团队成员愿意遵守规则，往往不是因为规则数量多，而是因为他们理解规则背后的风险。如果数据负责人能够说明某条规则如何帮助复现、回滚或合规，执行阻力会显著降低。相反，如果规则只表现为额外审批和表单，团队就可能把..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 564,
+      "line": 565,
       "kind": "weak-booster",
       "phrase": "真正",
       "context": "审核记录中还保留了当时的判断依据：新版客服知识库已经替换退款流程说明，质量审核指南中写有\"过时流程不进入正式训练集\"。从单条规则看，审核人员并没有违反流程；真正的问题在于指南没有区分\"已经失效且不应回答的流程\"与\"仍需解释的历史流程\"..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 605,
+      "line": 606,
       "kind": "rhetorical-not-but",
       "phrase": "不是\"错误删除样本\"，而是",
       "context": "从治理角度看，案例中的根因不是\"错误删除样本\"，而是\"质量规则没有表达业务时间维度\"。因此，修复方案不能停留在恢复样本，还应更新标注和审核指南：对历史流程、过渡流程、已废弃流程和仍需解释的旧流程进行分类；为每类流程设定不同处理策略；在..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 609,
+      "line": 610,
       "kind": "weak-booster",
       "phrase": "真正",
       "context": "最后，案例也提醒团队建立\"业务时效性数据\"的特殊治理规则。客服、政策、金融、教育、医疗和企业知识库等场景中，数据是否过时并不是简单的是非问题。某些旧信息必须删除，某些旧信息必须保留但加上时间边界，某些旧信息只能用于解释历史而不能指导当..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 619,
+      "line": 620,
       "kind": "weak-booster",
       "phrase": "真正",
       "context": "还需要注意，版本管理并不天然保证正确性。一个错误的数据版本也可以被完整记录，一个质量不足的实验也可以被准确追踪。版本体系提供的是可解释性和可追溯性，而不是自动判断所有决策正确。因此，它必须与质量评估、实验设计、合规审查和业务专家判断结..."
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 623,
+      "line": 624,
       "kind": "rhetorical-not-but",
       "phrase": "不是推荐某一种具体工具，而是",
       "context": "因此，本章的核心并不是推荐某一种具体工具，而是强调一种工程化原则：凡是会影响模型结果、合规边界和组织决策的数据变化，都应当留下可查询、可解释、可验证的记录。工具可以不同，平台形态可以不同，但这个原则不能缺席。"
@@ -9198,7 +9205,7 @@
       "line": 28,
       "kind": "weak-booster",
       "phrase": "真正",
-      "context": "这并不是一个可以凭直觉回答的问题。在大量组织中，数据价值的判断长期停留在朴素而经不起推敲的代理指标上——数据量越大越有价值、采购花的钱越多越重要、能让模型某个指标涨一点就值得保留。这些判断方式看似合理，却频繁导致严重的资源错配：组织在..."
+      "context": "这并不是一个可以凭直觉回答的问题。在大量组织中，数据价值的判断长期停留在朴素而经不起推敲的代理指标上——数据量越大越有价值、采购投入越高越值得优先保障、能让模型某个指标涨一点就值得保留。这些判断方式看似合理，却频繁导致严重的资源错配：..."
     },
     {
       "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
@@ -9206,6 +9213,13 @@
       "kind": "weak-booster",
       "phrase": "真正",
       "context": "在讨论如何正确评估数据价值之前，有必要先厘清那些被广泛使用、却系统性地高估或低估数据价值的判断方式。把信息当作一种需要被度量、管理和变现的资产，这一思想本身并不新鲜（Moody and Walsh 1999; Laney 2017），..."
+    },
+    {
+      "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
+      "line": 101,
+      "kind": "weak-booster",
+      "phrase": "真正",
+      "context": "一个实用的价值指标体系应当满足三个要求。其一是**可度量**：每个指标都应有明确的计算口径与数据来源，能够被流水线自动采集，而非依赖主观打分。其二是**可比较**：指标应当在不同数据资产之间可比，从而支持横向排序与组合管理。其三是**..."
     },
     {
       "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
@@ -9387,7 +9401,7 @@
       "line": 664,
       "kind": "weak-booster",
       "phrase": "真正",
-      "context": "归根结底，数据价值评估与复用所追求的，是让组织对自己的数据资产心中有数——知道哪些值得投入、哪些应当复用、哪些需要退役。它与前两章一脉相承：如果说数据目录解决的是数据能否被找到和理解，数据产品与契约解决的是数据能否被长期可靠依赖，那么..."
+      "context": "归根结底，数据价值评估与复用所追求的，是让组织对自身数据资产形成清晰认知——知道哪些值得投入、哪些应当复用、哪些需要退役。它与前两章一脉相承：如果说数据目录解决的是数据能否被找到和理解，数据产品与契约解决的是数据能否被长期可靠依赖，那..."
     },
     {
       "file": "docs/zh/part9/ch30_internal_data_market_and_sharing_governance.md",
@@ -10538,8 +10552,8 @@
       "file": "docs/zh/part12/ch41_visual_reasoning_tool_data_engineering.md",
       "line": 449,
       "alt": "图41-6：MedImage-ToolVQA 数据构建概念流程",
-      "src": "../../images/part12/ch39_06_medimage_tool_vqa_pipeline.svg",
-      "resolved": "docs/images/part12/ch39_06_medimage_tool_vqa_pipeline.svg",
+      "src": "../../images/part12/ch41_02_medimage_tool_vqa_pipeline.svg",
+      "resolved": "docs/images/part12/ch41_02_medimage_tool_vqa_pipeline.svg",
       "exists": true,
       "size_kb": 5.439453125,
       "dimensions": "unknown",
@@ -10554,8 +10568,8 @@
       "file": "docs/zh/part12/ch41_visual_reasoning_tool_data_engineering.md",
       "line": 491,
       "alt": "图41-7：工具调用多轮轨迹结构",
-      "src": "../../images/part12/ch39_07_tool_trajectory_structure.svg",
-      "resolved": "docs/images/part12/ch39_07_tool_trajectory_structure.svg",
+      "src": "../../images/part12/ch41_03_tool_trajectory_structure.svg",
+      "resolved": "docs/images/part12/ch41_03_tool_trajectory_structure.svg",
       "exists": true,
       "size_kb": 6.2900390625,
       "dimensions": "unknown",
@@ -10570,8 +10584,8 @@
       "file": "docs/zh/part12/ch41_visual_reasoning_tool_data_engineering.md",
       "line": 572,
       "alt": "图41-8：SFT schema 中的真实图像与 bbox 证据",
-      "src": "../../images/part12/ch39_08_sft_bbox_evidence.svg",
-      "resolved": "docs/images/part12/ch39_08_sft_bbox_evidence.svg",
+      "src": "../../images/part12/ch41_05_sft_schema_real_bbox_example.svg",
+      "resolved": "docs/images/part12/ch41_05_sft_schema_real_bbox_example.svg",
       "exists": true,
       "size_kb": 961.669921875,
       "dimensions": "unknown",
@@ -10586,8 +10600,8 @@
       "file": "docs/zh/part12/ch41_visual_reasoning_tool_data_engineering.md",
       "line": 709,
       "alt": "图41-9：质量控制与人工复核门禁",
-      "src": "../../images/part12/ch39_09_quality_review_gate.svg",
-      "resolved": "docs/images/part12/ch39_09_quality_review_gate.svg",
+      "src": "../../images/part12/ch41_04_quality_review_gate.svg",
+      "resolved": "docs/images/part12/ch41_04_quality_review_gate.svg",
       "exists": true,
       "size_kb": 7.97265625,
       "dimensions": "unknown",
@@ -10602,8 +10616,8 @@
       "file": "docs/zh/part12/ch42_speech_audio_interaction_data_engineering.md",
       "line": 68,
       "alt": "图42-1：语义响应与风格控制双通道 schema",
-      "src": "../../images/part12/ch40_01_dual_channel_schema.svg",
-      "resolved": "docs/images/part12/ch40_01_dual_channel_schema.svg",
+      "src": "../../images/part12/ch42_fig02_dual_channel_schema.svg",
+      "resolved": "docs/images/part12/ch42_fig02_dual_channel_schema.svg",
       "exists": true,
       "size_kb": 3.4345703125,
       "dimensions": "unknown",
@@ -10618,8 +10632,8 @@
       "file": "docs/zh/part12/ch42_speech_audio_interaction_data_engineering.md",
       "line": 269,
       "alt": "图42-2：VoiceStyleControl 数据构建流水线",
-      "src": "../../images/part12/ch40_02_voice_style_data_pipeline.svg",
-      "resolved": "docs/images/part12/ch40_02_voice_style_data_pipeline.svg",
+      "src": "../../images/part12/ch42_fig01_data_pipeline.svg",
+      "resolved": "docs/images/part12/ch42_fig01_data_pipeline.svg",
       "exists": true,
       "size_kb": 3.87109375,
       "dimensions": "unknown",
@@ -10634,8 +10648,8 @@
       "file": "docs/zh/part12/ch42_speech_audio_interaction_data_engineering.md",
       "line": 363,
       "alt": "图42-3：质量评估与数据飞轮闭环",
-      "src": "../../images/part12/ch40_03_quality_loop.svg",
-      "resolved": "docs/images/part12/ch40_03_quality_loop.svg",
+      "src": "../../images/part12/ch42_fig03_quality_loop.svg",
+      "resolved": "docs/images/part12/ch42_fig03_quality_loop.svg",
       "exists": true,
       "size_kb": 3.0830078125,
       "dimensions": "unknown",
@@ -10650,8 +10664,8 @@
       "file": "docs/zh/part12/ch43_reasoning_trace_compression_data_engineering.md",
       "line": 31,
       "alt": "图43-1：Latent-Switch-69K 构建流水线图",
-      "src": "../../images/part12/ch40_04_latent_switch_pipeline.svg",
-      "resolved": "docs/images/part12/ch40_04_latent_switch_pipeline.svg",
+      "src": "../../images/part12/ch43_latent_switch_pipeline.svg",
+      "resolved": "docs/images/part12/ch43_latent_switch_pipeline.svg",
       "exists": true,
       "size_kb": 10.7060546875,
       "dimensions": "unknown",
@@ -10682,8 +10696,8 @@
       "file": "docs/zh/part12/ch43_reasoning_trace_compression_data_engineering.md",
       "line": 181,
       "alt": "图43-3：原始 CoT、压缩 CoT 与 latent placeholder 对比",
-      "src": "../../images/part12/ch40_06_cot_latent_comparison.svg",
-      "resolved": "docs/images/part12/ch40_06_cot_latent_comparison.svg",
+      "src": "../../images/part12/ch43_cot_latent_comparison.svg",
+      "resolved": "docs/images/part12/ch43_cot_latent_comparison.svg",
       "exists": true,
       "size_kb": 45.099609375,
       "dimensions": "unknown",
@@ -10714,8 +10728,8 @@
       "file": "docs/zh/part12/ch43_reasoning_trace_compression_data_engineering.md",
       "line": 336,
       "alt": "图43-5：Supervision mask 示意图",
-      "src": "../../images/part12/ch40_08_supervision_mask.svg",
-      "resolved": "docs/images/part12/ch40_08_supervision_mask.svg",
+      "src": "../../images/part12/ch43_supervision_mask.svg",
+      "resolved": "docs/images/part12/ch43_supervision_mask.svg",
       "exists": true,
       "size_kb": 22.7548828125,
       "dimensions": "unknown",
@@ -24665,7 +24679,7 @@
     {
       "file": "docs/zh/part9/ch27_data_catalog_and_metadata_governance.md",
       "entry_no": 4,
-      "entry": "Cai L, Zhu Y (2015) The Challenges of Data Quality and Data Quality Metrics. Journal of Data and Information Quality 6(2-3):1–10.",
+      "entry": "Cai L, Zhu Y (2015) The challenges of data quality and data quality assessment in the big data era. Data science journal, 2015, 14: 2-2.",
       "year": "2015",
       "doi": "",
       "url": "",
@@ -25551,7 +25565,7 @@
   ],
   "missing_reference_files": [],
   "summary": {
-    "style_hits": 1374,
+    "style_hits": 1376,
     "figures": 287,
     "figures_needing_review": 287,
     "broken_figures": 0,

@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-06-13T15:57:56.539548+00:00",
+  "generated_at_utc": "2026-06-13T16:31:54.205632+00:00",
   "scope_roots": [
     "docs/zh"
   ],
   "summary": {
     "files": 71,
     "references": 972,
-    "body_author_year_citations": 1330,
+    "body_author_year_citations": 1331,
     "missing_same_chapter_references": 0,
-    "uncited_references": 225,
+    "uncited_references": 224,
     "duplicate_reference_groups": 0,
     "external_status_counts": {
       "not-checked": 972
@@ -13856,7 +13856,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 657,
+      "line": 658,
       "entry_no": 1,
       "entry": "Amershi S, Begel A, Bird C, DeLine R, Gall H, Kamar E, Nagappan N, Nushi B, Zimmermann T (2019) Software Engineering for Machine Learning: A Case Study. In: Proceedings of the 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP), pp 291-300.",
       "first_author": "Amershi",
@@ -13873,7 +13873,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 659,
+      "line": 660,
       "entry_no": 2,
       "entry": "Armbrust M, Ghodsi A, Xin R, Zaharia M (2020) Delta Lake: High-Performance ACID Table Storage over Cloud Object Stores. Proceedings of the VLDB Endowment 13(12):3411-3424.",
       "first_author": "Armbrust",
@@ -13890,7 +13890,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 661,
+      "line": 662,
       "entry_no": 3,
       "entry": "Baylor D, Breck E, Cheng H-T, Fiedel N, Foo C Y, Haque Z, Haykal S, Ispir M, Jain V, Koc L, Koo C Y, Lew L, Mewald C, Modi A N, Polyzotis N, Ramesh S, Roy S, Whang S E, Wicke M, Wilkiewicz J, Zhang X, Zinkevich M (2017) TFX: A TensorFlow-Based Production-Scale Machine Learning Platform. In: Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp 1387-1395.",
       "first_author": "Baylor",
@@ -13907,7 +13907,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 663,
+      "line": 664,
       "entry_no": 4,
       "entry": "Breck E, Cai S, Nielsen E, Salib M, Sculley D (2017) The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction. In: IEEE International Conference on Big Data, pp 1123-1132.",
       "first_author": "Breck",
@@ -13924,7 +13924,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 665,
+      "line": 666,
       "entry_no": 5,
       "entry": "Breck E, Polyzotis N, Roy S, Whang S E, Zinkevich M (2019) Data Validation for Machine Learning. In: Proceedings of Machine Learning and Systems 1, pp 334-347.",
       "first_author": "Breck",
@@ -13941,7 +13941,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 667,
+      "line": 668,
       "entry_no": 6,
       "entry": "Buneman P, Khanna S, Tan W-C (2001) Why and Where: A Characterization of Data Provenance. In: Proceedings of the 8th International Conference on Database Theory (ICDT), pp 316-330.",
       "first_author": "Buneman",
@@ -13958,7 +13958,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 669,
+      "line": 670,
       "entry_no": 7,
       "entry": "DAMA International (2017) DAMA-DMBOK: Data Management Body of Knowledge, 2nd Edition. Technics Publications.",
       "first_author": "DAMA",
@@ -13975,7 +13975,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 671,
+      "line": 672,
       "entry_no": 8,
       "entry": "DVC Documentation (2024) Data Version Control Documentation. Available at: https://dvc.org/doc.",
       "first_author": "DVC",
@@ -13990,7 +13990,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 673,
+      "line": 674,
       "entry_no": 9,
       "entry": "Gebru T, Morgenstern J, Vecchione B, Vaughan J W, Wallach H, Daumé III H, Crawford K (2021) Datasheets for Datasets. Communications of the ACM 64(12):86-92.",
       "first_author": "Gebru",
@@ -14007,7 +14007,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 675,
+      "line": 676,
       "entry_no": 10,
       "entry": "Kreuzberger D, Kühl N, Hirschl S (2023) Machine Learning Operations (MLOps): Overview, Definition, and Architecture. IEEE Access 11:31866-31879.",
       "first_author": "Kreuzberger",
@@ -14024,7 +14024,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 677,
+      "line": 678,
       "entry_no": 11,
       "entry": "Mitchell M, Wu S, Zaldivar A, Barnes P, Vasserman L, Hutchinson B, Spitzer E, Raji I D, Gebru T (2019) Model Cards for Model Reporting. In: Proceedings of the Conference on Fairness, Accountability, and Transparency, pp 220-229.",
       "first_author": "Mitchell",
@@ -14041,7 +14041,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 679,
+      "line": 680,
       "entry_no": 12,
       "entry": "Moreau L, Missier P (eds.) (2013) PROV-DM: The PROV Data Model. W3C Recommendation.",
       "first_author": "Moreau",
@@ -14058,7 +14058,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 681,
+      "line": 682,
       "entry_no": 13,
       "entry": "Peng R D (2011) Reproducible Research in Computational Science. Science 334(6060):1226-1227.",
       "first_author": "Peng",
@@ -14075,7 +14075,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 683,
+      "line": 684,
       "entry_no": 14,
       "entry": "Polyzotis N, Roy S, Whang S E, Zinkevich M (2017) Data Management Challenges in Production Machine Learning. In: Proceedings of the 2017 ACM International Conference on Management of Data (SIGMOD), pp 1723-1726.",
       "first_author": "Polyzotis",
@@ -14092,7 +14092,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 685,
+      "line": 686,
       "entry_no": 15,
       "entry": "Sandve G K, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9(10):e1003285.",
       "first_author": "Sandve",
@@ -14109,7 +14109,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 687,
+      "line": 688,
       "entry_no": 16,
       "entry": "Sculley D, Holt G, Golovin D, Davydov E, Phillips T, Ebner D, Chaudhary V, Young M, Crespo J-F, Dennison D (2015) Hidden Technical Debt in Machine Learning Systems. In: Advances in Neural Information Processing Systems 28, pp 2503-2511.",
       "first_author": "Sculley",
@@ -14126,7 +14126,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 689,
+      "line": 690,
       "entry_no": 17,
       "entry": "Simmhan Y L, Plale B, Gannon D (2005) A Survey of Data Provenance in e-Science. ACM SIGMOD Record 34(3):31-36.",
       "first_author": "Simmhan",
@@ -14143,7 +14143,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 691,
+      "line": 692,
       "entry_no": 18,
       "entry": "Stodden V, Leisch F, Peng R D (eds.) (2014) Implementing Reproducible Research. CRC Press.",
       "first_author": "Stodden",
@@ -14160,7 +14160,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 693,
+      "line": 694,
       "entry_no": 19,
       "entry": "Vartak M, Subramanyam H, Lee W-E, Viswanathan S, Husnoo S, Madden S, Zaharia M (2016) ModelDB: A System for Machine Learning Model Management. In: Proceedings of the Workshop on Human-In-the-Loop Data Analytics (HILDA), Article 14.",
       "first_author": "Vartak",
@@ -14177,7 +14177,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 695,
+      "line": 696,
       "entry_no": 20,
       "entry": "Zaharia M, Chen A, Davidson A, Ghodsi A, Hong S A, Konwinski A, Murching S, Nykodym T, Ogilvie P, Parkhe M, Xie F (2018) Accelerating the Machine Learning Lifecycle with MLflow. IEEE Data Engineering Bulletin 41(4):39-45.",
       "first_author": "Zaharia",
@@ -14585,15 +14585,15 @@
       "file": "docs/zh/part9/ch27_data_catalog_and_metadata_governance.md",
       "line": 596,
       "entry_no": 4,
-      "entry": "Cai L, Zhu Y (2015) The Challenges of Data Quality and Data Quality Metrics. Journal of Data and Information Quality 6(2-3):1–10.",
+      "entry": "Cai L, Zhu Y (2015) The challenges of data quality and data quality assessment in the big data era. Data science journal, 2015, 14: 2-2.",
       "first_author": "Cai",
       "year": "2015",
-      "title": "The Challenges of Data Quality and Data Quality Metrics",
+      "title": "The challenges of data quality and data quality assessment in the big data era",
       "doi": "",
       "arxiv": "",
       "url": "",
       "key": "cai:2015",
-      "fingerprint": "the challenges of data quality and data quality metrics",
+      "fingerprint": "the challenges of data quality and data quality assessment in the big data era",
       "format_issues": [
         "missing-doi-arxiv-url"
       ]
@@ -26388,7 +26388,7 @@
       "year": "2021",
       "text": "Sambasivan et al. 2021",
       "key": "sambasivan:2021",
-      "context": "**需求三：标注质量的持续监控**。人工标注的质量会随着时间漂移：标注员的疲劳状态会影响一致性，标注任务边界不清会导致标准分歧，外包商之间的理解差异会产生系统性偏差。这需要一套持续运营的质量监控体系，而不是\"上线前做一次抽检\"就完事。数据级联研究表明，早期数据质量问题会在下游模型、产品和组织流程中不断放大，因此必须把数据工作视为一等工程对象（Sambasivan et al. 2021）。"
+      "context": "**需求三：标注质量的持续监控**。人工标注的质量会随着时间漂移：标注员的疲劳状态会影响一致性，标注任务边界不清会导致标准分歧，外包商之间的理解差异会产生系统性偏差。这需要一套持续运营的质量监控体系，而不是上线前做一次抽检就能解决问题。数据级联研究表明，早期数据质量问题会在下游模型、产品和组织流程中不断放大，因此必须把数据工作视为一等工程对象（Sambasivan et al. 2021）。"
     },
     {
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
@@ -26424,7 +26424,7 @@
       "year": "2015",
       "text": "Humble, Molesky and O'Reilly 2015",
       "key": "humble:2015",
-      "context": "飞轮要持续转动，需要固定的时间节点来驱动。持续交付实践强调固定节奏、自动化验证和小批量变更，目的正是降低交付风险并提高反馈速度（Humble and Farley 2010; Humble, Molesky and O'Reilly 2015）。以下是一套适合中等规模 LLM 数据团队（10-30 人）的周度节奏设计："
+      "context": "飞轮要持续转动，需要固定的时间节点来驱动。持续交付实践强调固定节奏、自动化验证和小批量变更，目的正是降低交付风险并提高反馈速度（Humble and Farley 2010; Humble, Molesky and O'Reilly 2015）。这里的“周度节奏”主要指需求推进、交付协同和短周期反馈的运行节奏；月度评审和季度冻结则是叠加其上的治理与校准节点。以下是一套适合中等规模 LLM 数据团队（10-30 人）的分层节奏设计："
     },
     {
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
@@ -26433,7 +26433,7 @@
       "year": "2010",
       "text": "Humble and Farley 2010",
       "key": "humble:2010",
-      "context": "飞轮要持续转动，需要固定的时间节点来驱动。持续交付实践强调固定节奏、自动化验证和小批量变更，目的正是降低交付风险并提高反馈速度（Humble and Farley 2010; Humble, Molesky and O'Reilly 2015）。以下是一套适合中等规模 LLM 数据团队（10-30 人）的周度节奏设计："
+      "context": "飞轮要持续转动，需要固定的时间节点来驱动。持续交付实践强调固定节奏、自动化验证和小批量变更，目的正是降低交付风险并提高反馈速度（Humble and Farley 2010; Humble, Molesky and O'Reilly 2015）。这里的“周度节奏”主要指需求推进、交付协同和短周期反馈的运行节奏；月度评审和季度冻结则是叠加其上的治理与校准节点。以下是一套适合中等规模 LLM 数据团队（10-30 人）的分层节奏设计："
     },
     {
       "file": "docs/zh/part8/ch24_dataops_flywheel_team.md",
@@ -26514,7 +26514,7 @@
       "year": "2016",
       "text": "Vartak et al. 2016",
       "key": "vartak:2016",
-      "context": "这个案例揭示了缺乏版本管理的核心代价：**问题发现的时间和排查的时间之间，存在一个巨大的信息黑洞**。没有版本管理，就没有可复盘的迭代。实验管理系统和机器学习生命周期平台的设计，正是为了解决模型、数据、参数和结果之间难以追踪的问题（Vartak et al. 2016; Zaharia et al. 2018）。"
+      "context": "这个案例揭示了缺乏版本管理的核心代价：**问题发现的时间和排查的时间之间，存在一个巨大的信息缺口**。没有版本管理，就没有可复盘的迭代。实验管理系统和机器学习生命周期平台的设计，正是为了解决模型、数据、参数和结果之间难以追踪的问题（Vartak et al. 2016; Zaharia et al. 2018）。"
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
@@ -26523,7 +26523,7 @@
       "year": "2018",
       "text": "Zaharia et al. 2018",
       "key": "zaharia:2018",
-      "context": "这个案例揭示了缺乏版本管理的核心代价：**问题发现的时间和排查的时间之间，存在一个巨大的信息黑洞**。没有版本管理，就没有可复盘的迭代。实验管理系统和机器学习生命周期平台的设计，正是为了解决模型、数据、参数和结果之间难以追踪的问题（Vartak et al. 2016; Zaharia et al. 2018）。"
+      "context": "这个案例揭示了缺乏版本管理的核心代价：**问题发现的时间和排查的时间之间，存在一个巨大的信息缺口**。没有版本管理，就没有可复盘的迭代。实验管理系统和机器学习生命周期平台的设计，正是为了解决模型、数据、参数和结果之间难以追踪的问题（Vartak et al. 2016; Zaharia et al. 2018）。"
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
@@ -26613,7 +26613,7 @@
       "year": "2017",
       "text": "Breck et al. 2017",
       "key": "breck:2017",
-      "context": "一个常见的误区是：失败实验不需要认真记录，因为\"反正没有价值\"。生产就绪度评估框架强调，失败案例、数据异常、测试覆盖和监控信号都是降低 ML 技术债的重要证据，而不应在实验结束后丢失（Breck et al. 2017）。这个观点会造成巨大的知识浪费。"
+      "context": "一个常见的误区是：失败实验没有价值，不需要认真记录。这样的观点会造成巨大的知识浪费。生产就绪度评估框架强调，失败案例、数据异常、测试覆盖和监控信号都是降低 ML 技术债的重要证据，而不应在实验结束后丢失（Breck et al. 2017）。"
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
@@ -26645,24 +26645,24 @@
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
       "line": 457,
-      "author": "Simmhan",
-      "year": "2005",
-      "text": "Simmhan, Plale and Gannon 2005",
-      "key": "simmhan:2005",
-      "context": "谱系治理规则是数据团队约定的一套\"数据行为准则\"，规定了哪些操作是被允许的、哪些需要审批、哪些是被禁止的。数据溯源综述指出，血缘信息只有与查询、审计、调试和复现需求结合，才会真正产生工程价值（Simmhan, Plale and Gannon 2005）。"
-    },
-    {
-      "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 469,
       "author": "Breck",
       "year": "2019",
       "text": "Breck et al. 2019",
       "key": "breck:2019",
-      "context": "任何进入模型训练的数据版本，必须经过自动化质量检查。自动化数据验证系统通过统计约束、schema 检查和异常检测帮助团队在训练前发现数据质量问题（Breck et al. 2019）。"
+      "context": "谱系治理规则是数据团队约定的一套\"数据行为准则\"，规定了哪些操作是被允许的、哪些需要审批、哪些是被禁止的。数据溯源综述指出，血缘信息只有与查询、审计、调试和复现需求结合，才会真正产生工程价值（Simmhan, Plale and Gannon 2005）。任何进入模型训练的数据版本，必须经过自动化质量检查。自动化数据验证系统通过统计约束、schema 检查和异常检测帮助团队在训练前发现数据质量问题（Breck et al. 2019）。"
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 594,
+      "line": 457,
+      "author": "Simmhan",
+      "year": "2005",
+      "text": "Simmhan, Plale and Gannon 2005",
+      "key": "simmhan:2005",
+      "context": "谱系治理规则是数据团队约定的一套\"数据行为准则\"，规定了哪些操作是被允许的、哪些需要审批、哪些是被禁止的。数据溯源综述指出，血缘信息只有与查询、审计、调试和复现需求结合，才会真正产生工程价值（Simmhan, Plale and Gannon 2005）。任何进入模型训练的数据版本，必须经过自动化质量检查。自动化数据验证系统通过统计约束、schema 检查和异常检测帮助团队在训练前发现数据质量问题（Breck et al. 2019）。"
+    },
+    {
+      "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
+      "line": 595,
       "author": "Stodden",
       "year": "2014",
       "text": "Stodden, Leisch and Peng 2014",
@@ -26838,7 +26838,7 @@
       "year": "2018",
       "text": "Beyer et al. 2018",
       "key": "beyer:2018",
-      "context": "P0 和 P1 告警必须有人工确认（ACK）机制。高可靠系统通常通过分级告警、升级路径和明确值班责任来缩短平均恢复时间，并避免事故在无人接手时扩大（Beyer et al. 2018; Nygard 2018）：收到告警的工程师必须在规定时间内确认\"我知道了，正在处理\"，否则自动升级。P2 和 P3 告警不需要立即确认，但必须在 SLA 时间内处理完毕并关闭。"
+      "context": "P0 和 P1 告警必须有人工确认（ACK）机制。高可靠系统通常通过分级告警、升级路径和明确值班责任来缩短平均恢复时间，并避免事故在无人接手时扩大（Beyer et al. 2018; Nygard 2018）。收到告警的工程师必须在规定时间内进行确认，否则系统将自动升级。P2 和 P3 告警不需要立即确认，但必须在 SLA 时间内处理完毕并关闭。"
     },
     {
       "file": "docs/zh/part8/ch26_data_platform_observability.md",
@@ -27180,7 +27180,7 @@
       "year": "2021",
       "text": "Sambasivan et al. 2021",
       "key": "sambasivan:2021",
-      "context": "在上一章中，我们讨论了如何通过数据资产目录与元数据治理，让组织内的数据从可见但不可达的状态，转变为可被发现、可被理解、可被信任的资产。然而，能够被发现和理解不等于能够被可靠地、长期地依赖。一个被登记在目录中的数据集，仍然可能被上游悄悄改变字段含义，或因为采集任务的一次故障而停止更新。当下游的训练流水线、RAG 知识库或评测系统正依赖这份数据稳定运转时，这类看似微小的变化，往往会沿着数据链路被层层放大，最终演变为模型效果下降、线上事..."
+      "context": "在上一章中，我们讨论了如何通过数据资产目录与元数据治理，让组织内的数据从可见但不可达的状态，转变为可被发现、可被理解、可被信任的资产。然而，能够被发现和理解不等于能够被可靠地、长期地依赖。一个被登记在目录中的数据集，仍然可能被上游改变字段含义，或因为采集任务的一次故障而停止更新。当下游的训练流水线、RAG 知识库或评测系统正依赖这份数据稳定运转时，这类看似微小的变化，往往会沿着数据链路被层层放大，最终演变为模型效果下降、线上事故甚..."
     },
     {
       "file": "docs/zh/part9/ch28_data_productization_and_data_contracts.md",
@@ -27360,7 +27360,7 @@
       "year": "2015",
       "text": "Sculley et al. 2015",
       "key": "sculley:2015",
-      "context": "这并不是一个可以凭直觉回答的问题。在大量组织中，数据价值的判断长期停留在朴素而经不起推敲的代理指标上——数据量越大越有价值、采购花的钱越多越重要、能让模型某个指标涨一点就值得保留。这些判断方式看似合理，却频繁导致严重的资源错配：组织在低价值数据上反复投入清洗与存储成本，却忽视了真正撑起多个下游场景的关键语料；团队为一次性的指标提升采购了昂贵的数据，事后却无人复用、无人维护，最终沦为技术债（Sculley et al. 2015）。..."
+      "context": "这并不是一个可以凭直觉回答的问题。在大量组织中，数据价值的判断长期停留在朴素而经不起推敲的代理指标上——数据量越大越有价值、采购投入越高越值得优先保障、能让模型某个指标涨一点就值得保留。这些判断方式看似合理，却频繁导致严重的资源错配：组织在低价值数据上反复投入清洗与存储成本，却忽视了真正撑起多个下游场景的关键语料；团队为一次性的指标提升采购了昂贵的数据，事后却无人复用、无人维护，最终沦为技术债（Sculley et al. 201..."
     },
     {
       "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
@@ -27469,6 +27469,15 @@
       "text": "Brynjolfsson, Hitt and Kim 2011",
       "key": "brynjolfsson:2011",
       "context": "再看从模型指标到业务价值，这中间横亘着一道更宽的鸿沟。模型某个准确率提升一个百分点，未必能转化为可感知的业务收益：提升的可能恰好是业务上不敏感的部分，可能被产品体验、响应延迟或用户信任等其他瓶颈所抵消，也可能因为部署、维护与监控的额外成本而被吞没。生产环境中机器学习系统的真实价值，往往不取决于模型指标本身，而取决于围绕数据与模型建立的工程纪律是否扎实（Sculley et al. 2015）。与此同时，数据驱动决策对企业绩效的正向..."
+    },
+    {
+      "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
+      "line": 101,
+      "author": "Fleckenstein",
+      "year": "2023",
+      "text": "Fleckenstein, Obaidi and Tryfona 2023",
+      "key": "fleckenstein:2023",
+      "context": "一个实用的价值指标体系应当满足三个要求。其一是**可度量**：每个指标都应有明确的计算口径与数据来源，能够被流水线自动采集，而非依赖主观打分。其二是**可比较**：指标应当在不同数据资产之间可比，从而支持横向排序与组合管理。其三是**可指导决策**：指标最终要能回答\"该不该继续投入这份数据\"\"哪份资产更值得优先治理\"这类现实问题，而非停留在描述层面。围绕数据估值方法与评分模型的综述研究同样强调，估值框架若无法同时支持指标定义、评分..."
     },
     {
       "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
@@ -31026,7 +31035,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 669,
+      "line": 670,
       "entry_no": 7,
       "entry": "DAMA International (2017) DAMA-DMBOK: Data Management Body of Knowledge, 2nd Edition. Technics Publications.",
       "first_author": "DAMA",
@@ -31043,7 +31052,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 671,
+      "line": 672,
       "entry_no": 8,
       "entry": "DVC Documentation (2024) Data Version Control Documentation. Available at: https://dvc.org/doc.",
       "first_author": "DVC",
@@ -31058,7 +31067,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 681,
+      "line": 682,
       "entry_no": 13,
       "entry": "Peng R D (2011) Reproducible Research in Computational Science. Science 334(6060):1226-1227.",
       "first_author": "Peng",
@@ -31220,23 +31229,6 @@
       "url": "",
       "key": "redman:1998",
       "fingerprint": "the impact of poor data quality on the typical enterprise",
-      "format_issues": [
-        "missing-doi-arxiv-url"
-      ]
-    },
-    {
-      "file": "docs/zh/part9/ch29_data_valuation_and_reuse.md",
-      "line": 671,
-      "entry_no": 2,
-      "entry": "Fleckenstein M, Obaidi A, Tryfona N (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model. Harvard Data Science Review 5(1).",
-      "first_author": "Fleckenstein",
-      "year": "2023",
-      "title": "A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model",
-      "doi": "",
-      "arxiv": "",
-      "url": "",
-      "key": "fleckenstein:2023",
-      "fingerprint": "a review of data valuation approaches and building and scoring a data valuation model",
       "format_issues": [
         "missing-doi-arxiv-url"
       ]
@@ -44241,7 +44233,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 657,
+      "line": 658,
       "entry_no": 1,
       "key": "amershi:2019",
       "title": "Software Engineering for Machine Learning: A Case Study",
@@ -44256,7 +44248,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 659,
+      "line": 660,
       "entry_no": 2,
       "key": "armbrust:2020",
       "title": "Delta Lake: High-Performance ACID Table Storage over Cloud Object Stores",
@@ -44271,7 +44263,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 661,
+      "line": 662,
       "entry_no": 3,
       "key": "baylor:2017",
       "title": "TFX: A TensorFlow-Based Production-Scale Machine Learning Platform",
@@ -44286,7 +44278,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 663,
+      "line": 664,
       "entry_no": 4,
       "key": "breck:2017",
       "title": "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction",
@@ -44301,7 +44293,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 665,
+      "line": 666,
       "entry_no": 5,
       "key": "breck:2019",
       "title": "Data Validation for Machine Learning",
@@ -44316,7 +44308,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 667,
+      "line": 668,
       "entry_no": 6,
       "key": "buneman:2001",
       "title": "Why and Where: A Characterization of Data Provenance",
@@ -44331,7 +44323,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 669,
+      "line": 670,
       "entry_no": 7,
       "key": "dama:2017",
       "title": "DAMA-DMBOK: Data Management Body of Knowledge, 2nd Edition",
@@ -44346,7 +44338,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 671,
+      "line": 672,
       "entry_no": 8,
       "key": "dvc:2024",
       "title": "Data Version Control Documentation",
@@ -44361,7 +44353,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 673,
+      "line": 674,
       "entry_no": 9,
       "key": "gebru:2021",
       "title": "Datasheets for Datasets",
@@ -44376,7 +44368,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 675,
+      "line": 676,
       "entry_no": 10,
       "key": "kreuzberger:2023",
       "title": "Machine Learning Operations (MLOps): Overview, Definition, and Architecture",
@@ -44391,7 +44383,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 677,
+      "line": 678,
       "entry_no": 11,
       "key": "mitchell:2019",
       "title": "Model Cards for Model Reporting",
@@ -44406,7 +44398,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 679,
+      "line": 680,
       "entry_no": 12,
       "key": "moreau:2013",
       "title": "PROV-DM: The PROV Data Model",
@@ -44421,7 +44413,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 681,
+      "line": 682,
       "entry_no": 13,
       "key": "peng:2011",
       "title": "Reproducible Research in Computational Science",
@@ -44436,7 +44428,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 683,
+      "line": 684,
       "entry_no": 14,
       "key": "polyzotis:2017",
       "title": "Data Management Challenges in Production Machine Learning",
@@ -44451,7 +44443,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 685,
+      "line": 686,
       "entry_no": 15,
       "key": "sandve:2013",
       "title": "Ten Simple Rules for Reproducible Computational Research",
@@ -44466,7 +44458,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 687,
+      "line": 688,
       "entry_no": 16,
       "key": "sculley:2015",
       "title": "Hidden Technical Debt in Machine Learning Systems",
@@ -44481,7 +44473,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 689,
+      "line": 690,
       "entry_no": 17,
       "key": "simmhan:2005",
       "title": "A Survey of Data Provenance in e-Science",
@@ -44496,7 +44488,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 691,
+      "line": 692,
       "entry_no": 18,
       "key": "stodden:2014",
       "title": "Implementing Reproducible Research",
@@ -44511,7 +44503,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 693,
+      "line": 694,
       "entry_no": 19,
       "key": "vartak:2016",
       "title": "ModelDB: A System for Machine Learning Model Management",
@@ -44526,7 +44518,7 @@
     },
     {
       "file": "docs/zh/part8/ch25_data_versioning_experiment_tracking.md",
-      "line": 695,
+      "line": 696,
       "entry_no": 20,
       "key": "zaharia:2018",
       "title": "Accelerating the Machine Learning Lifecycle with MLflow",
@@ -44889,7 +44881,7 @@
       "line": 596,
       "entry_no": 4,
       "key": "cai:2015",
-      "title": "The Challenges of Data Quality and Data Quality Metrics",
+      "title": "The challenges of data quality and data quality assessment in the big data era",
       "status": "not-checked",
       "source": "",
       "matched_title": "",

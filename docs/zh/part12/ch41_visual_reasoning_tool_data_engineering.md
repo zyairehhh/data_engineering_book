@@ -446,7 +446,7 @@ writer.commit()
 train_ds = ds.MindDataset("tool_sft.mindrecord").shuffle(4096).batch(8)
 ```
 
-![图41-6：MedImage-ToolVQA 数据构建概念流程](../../images/part12/ch39_06_medimage_tool_vqa_pipeline.svg)
+![图41-6：MedImage-ToolVQA 数据构建概念流程](../../images/part12/ch41_02_medimage_tool_vqa_pipeline.svg)
 
 *图41-6：MedImage-ToolVQA 数据构建概念流程。流程的重点不是脚本顺序，而是证据链和行为链如何在各阶段被保留下来。*
 
@@ -488,7 +488,7 @@ MedImage-ToolVQA 中涉及三类视觉工具：`Zoom-in`、`BiomedParse` 和 `SA
 
 工具调用轨迹的核心是多轮结构。它不是把工具调用写在同一段文本中，而是将工具动作和工具观察分开，让模型在训练时经历一个“行动—观察—继续判断”的过程 (Yao et al. 2023)。
 
-![图41-7：工具调用多轮轨迹结构](../../images/part12/ch39_07_tool_trajectory_structure.svg)
+![图41-7：工具调用多轮轨迹结构](../../images/part12/ch41_03_tool_trajectory_structure.svg)
 
 *图41-7：工具调用多轮轨迹结构。工具观察以新的图像输入形式返回，模型必须基于观察图继续推理，而非仅生成一个形式正确的调用。*
 
@@ -569,7 +569,7 @@ Assistant:
 
 在医学图像场景中，SFT 多轮记录还应显式保存一个影像诊断相关 schema。这里的“诊断”不是要求模型给出临床结论，而是把训练题目中的医学影像任务、候选标签、证据区域和安全边界结构化。图41-8给出了一组来自 VQA-RAD 测试集的胸片样例：同一条记录不仅保存原始图像，还保存 bbox 坐标、框选可视化图和由工具返回的局部观察图。
 
-![图41-8：SFT schema 中的真实图像与 bbox 证据](../../images/part12/ch39_08_sft_bbox_evidence.svg)
+![图41-8：SFT schema 中的真实图像与 bbox 证据](../../images/part12/ch41_05_sft_schema_real_bbox_example.svg)
 
 *图41-8：SFT schema 中的真实图像与 bbox 证据。bbox 是训练记录中的结构化字段，同时也应能被还原为可复查的可视化证据。*
 
@@ -706,7 +706,7 @@ Assistant:
 
 医学图像工具调用数据的质量控制应当分层进行，而非等到最终数据封装后再一次性检查。更合理的方式，是在问题生成、区域校验、工具观察生成、轨迹合成和训练封装各阶段分别设置门禁。
 
-![图41-9：质量控制与人工复核门禁](../../images/part12/ch39_09_quality_review_gate.svg)
+![图41-9：质量控制与人工复核门禁](../../images/part12/ch41_04_quality_review_gate.svg)
 
 *图41-9：质量控制与人工复核门禁。医学图像工具调用数据需要同时检查答案、证据和行为，自动校验与人工复核应形成互补。*
 

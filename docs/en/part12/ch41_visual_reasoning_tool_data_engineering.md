@@ -439,7 +439,7 @@ writer.commit()
 train_ds = ds.MindDataset("tool_sft.mindrecord").shuffle(4096).batch(8)
 ```
 
-![Figure 41-6: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch39_06_medimage_tool_vqa_pipeline_en.svg)
+![Figure 41-6: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg)
 
 *Figure 41-6: Conceptual construction flow for MedImage-ToolVQA. The key point is not script order, but how the evidence chain and behavior chain are preserved across stages.*
 
@@ -481,7 +481,7 @@ Tool boundaries must also be stated clearly in system prompts and dataset docume
 
 The core of a tool trajectory is multi-turn structure. It is not a matter of writing a tool call into the same text paragraph; it separates the tool action from the tool observation so the model experiences an "act, observe, continue judging" process during training (Yao et al. 2023).
 
-![Figure 41-7: Multi-turn structure of tool-call trajectories](../../images/part12/ch39_07_tool_trajectory_structure_en.svg)
+![Figure 41-7: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.svg)
 
 *Figure 41-7: Multi-turn structure of a tool-call trajectory. Tool observations return as new image inputs; the model must continue reasoning from the observation image rather than merely produce a formally correct call.*
 
@@ -558,7 +558,7 @@ In SFT, clarity and stability matter most. The model must learn that `<tool_call
 
 Medical image SFT records should also keep an imaging-task schema. Here “diagnosis” means structuring the training task, candidate labels, evidence region, and safety boundary; it does not ask the model to provide clinical conclusions.
 
-![Figure 41-8: Real image and bbox evidence in the SFT schema](../../images/part12/ch39_08_sft_bbox_evidence_en.svg)
+![Figure 41-8: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.svg)
 
 *Figure 41-8: Bbox is a structured field and should be recoverable as reviewable visual evidence.*
 
@@ -693,7 +693,7 @@ These failure modes show that tool-use data quality is not determined by answer 
 
 Quality control for medical image tool-use data should be layered, rather than postponed until final packaging. A more reasonable approach is to set gates separately at question generation, region validation, tool-observation generation, trajectory synthesis, and training packaging.
 
-![Figure 41-9: Quality-control and human-review gates](../../images/part12/ch39_09_quality_review_gate_en.svg)
+![Figure 41-9: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.svg)
 
 *Figure 41-9: Quality-control and human-review gates. Medical image tool-use data needs to check answer, evidence, and behavior together; automated validation and human review should complement each other.*
 
