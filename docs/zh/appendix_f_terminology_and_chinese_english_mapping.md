@@ -1,6 +1,6 @@
 # 附录F：术语表与中英文对照
 
-<div class="chapter-authors">汪志立（ZhiLi Wang）</div>
+<div class="chapter-authors">汪志立（Zhili Wang）</div>
 
 ## F.1 附录定位
 

@@ -1,6 +1,6 @@
 # Appendix F: Terminology and Chinese-English Mapping
 
-<div class="chapter-authors">ZhiLi Wang</div>
+<div class="chapter-authors">Zhili Wang</div>
 
 ## F.1 Purpose of This Appendix
 

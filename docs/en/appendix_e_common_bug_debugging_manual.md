@@ -1,6 +1,6 @@
 # Appendix E: Common Data-Engineering Bug Debugging Manual
 
-<div class="chapter-authors">ZhiLi Wang</div>
+<div class="chapter-authors">Zhili Wang</div>
 
 ## E.1 Purpose of This Appendix
 

@@ -1,6 +1,6 @@
 # Chapter 37: Federated Learning and Privacy-Preserving Technologies
 
-<div class="chapter-authors">ZhiLi Wang; Xin Xu</div>
+<div class="chapter-authors">Zhili Wang; Xin Xu</div>
 
 ---
 

@@ -1,6 +1,6 @@
 # 第35章：数据工程 Agent 的安全、权限与人机协同
 
-<div class="chapter-authors">汪志立（ZhiLi Wang）</div>
+<div class="chapter-authors">汪志立（Zhili Wang）</div>
 
 ---
 

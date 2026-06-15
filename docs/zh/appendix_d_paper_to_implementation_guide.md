@@ -1,6 +1,6 @@
 # 附录D：论文到工程化转换指南
 
-<div class="chapter-authors">汪志立（ZhiLi Wang）</div>
+<div class="chapter-authors">汪志立（Zhili Wang）</div>
 
 ## D.1 附录定位
 

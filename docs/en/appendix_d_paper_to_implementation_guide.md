@@ -1,6 +1,6 @@
 # Appendix D: From Paper to Implementation Guide
 
-<div class="chapter-authors">ZhiLi Wang</div>
+<div class="chapter-authors">Zhili Wang</div>
 
 ## D.1 Purpose of This Appendix
 

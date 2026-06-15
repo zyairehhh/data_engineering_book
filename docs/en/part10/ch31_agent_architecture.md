@@ -1,6 +1,6 @@
 # Chapter 31: Architecture and Task Boundaries for Data Engineering Agents
 
-<div class="chapter-authors">ZhiLi Wang</div>
+<div class="chapter-authors">Zhili Wang</div>
 
 ## Chapter Abstract
 

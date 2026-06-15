@@ -47,7 +47,13 @@ EXCLUDED_FROM_FORMAL_PDF = {"title_page.md", "index.md", "translation-status.md"
 PRE_CONTENTS_FRONT_PATHS = {"preface.md", "acknowledgments.md"}
 POST_CONTENTS_FRONT_PATHS = {"contributors.md", "abbreviations.md"}
 
-BOOK_AUTHORS = "Jun Yu, Ran Zhang, Wenzhuo Du, Guanlin Mu, ZhiLi Wang, Ke Wang, and Xin Xu"
+BOOK_AUTHORS = (
+    "Jun Yu, Chang Wen Chen, Fan Yu, Cong Wang, Yang Luo, Ran Zhang, Wenzhuo Du, "
+    "Xin Xu, Ke Wang, Zhili Wang, Zhongyi Liu, Xuhong Cao, Guanlin Mu, Guanjun Liu, "
+    "Yuefeng Zou, Lin Xu, Xinyu Chen, Fengxin Chen, Xuan Li, Gongpeng Zhao, Can Wang, "
+    "Feng Zhao, Ye Yu, Fang Gao, Jiaen Liang, Wei Huang, Shengping Liu, Qingsong Liu, "
+    "and Jianqing Sun"
+)
 PDF_FONT_REGULAR = "DataEngineeringBook-Regular"
 PDF_FONT_BOLD = "DataEngineeringBook-Bold"
 PDF_FONT_REGISTERED = False
@@ -73,9 +79,9 @@ SECTION_AUTHORS = {
     **{f"part7/ch{chapter:02d}_": "Wenzhuo Du" for chapter in range(21, 24)},
     **{f"part8/ch{chapter:02d}_": "Wenzhuo Du" for chapter in range(24, 27)},
     **{f"part9/ch{chapter:02d}_": "Wenzhuo Du" for chapter in range(27, 31)},
-    **{f"part10/ch{chapter:02d}_": "ZhiLi Wang" for chapter in range(31, 36)},
-    "part11/ch36_": "ZhiLi Wang; Xin Xu",
-    "part11/ch37_": "ZhiLi Wang; Xin Xu",
+    **{f"part10/ch{chapter:02d}_": "Zhili Wang" for chapter in range(31, 36)},
+    "part11/ch36_": "Zhili Wang; Xin Xu",
+    "part11/ch37_": "Zhili Wang; Xin Xu",
     "part12/ch38_": "Guanlin Mu",
     "part12/ch39_": "Guanlin Mu",
     "part12/ch40_": "Guanjun Liu; Yuefeng Zou",
@@ -96,9 +102,9 @@ SECTION_AUTHORS = {
     "appendix_a_": "Xin Xu",
     "appendix_b_": "Xin Xu",
     "appendix_c_": "Xin Xu",
-    "appendix_d_": "ZhiLi Wang",
-    "appendix_e_": "ZhiLi Wang",
-    "appendix_f_": "ZhiLi Wang",
+    "appendix_d_": "Zhili Wang",
+    "appendix_e_": "Zhili Wang",
+    "appendix_f_": "Zhili Wang",
     "appendix_g_": "Xuhong Cao",
     "appendix_h_": "Xin Xu",
 }

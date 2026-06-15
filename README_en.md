@@ -155,10 +155,6 @@ data_engineering_book/
 - AI Product Managers (Technical)
 - Researchers interested in LLM data pipelines
 
-## Main Author
-
-Professor Jun Yu's Team
-
 **Laboratory Information:**  
 National Engineering Laboratory for Speech and Language Information Processing, University of Science and Technology of China;  
 Multimedia Computing and Intelligent Robotics Research Center, Department of Automation, University of Science and Technology of China;  

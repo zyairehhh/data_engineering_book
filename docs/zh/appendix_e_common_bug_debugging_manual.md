@@ -1,6 +1,6 @@
 # 附录E：常见数据工程 Bug 调试手册
 
-<div class="chapter-authors">汪志立（ZhiLi Wang）</div>
+<div class="chapter-authors">汪志立（Zhili Wang）</div>
 
 ## E.1 附录定位
 
